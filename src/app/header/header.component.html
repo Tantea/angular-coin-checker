@@ -1,0 +1,17 @@
+<div id="header"> 
+    <div id="options-container">
+    	<select #selectTimeCtrl id="selectTimeUnit" (change)="selectTimeUnit(selectTimeCtrl.value)">
+    		<option *ngFor="let key of objectKeys(timeSelectDict)" [value]="key" [selected]="key == selectedTimeUnit">{{key}}</option>
+    	</select>
+        <select #selectChartCtrl id="selectChartType" (change)="selectChartType(selectChartCtrl.value)">
+            <option *ngFor="let key of objectKeys(chartTypeDict)" [value]="key" [selected]="key == selectedChartType">{{key}}</option>
+        </select>
+        <select #selectFiatCtrl id="selectFiat" (change)="selectFiat(selectFiatCtrl.value)">
+            <option *ngFor="let key of fiatList" [value]="key" [selected]="key == selectedFiat">{{key}}</option>
+        </select>
+    </div>
+    <div>
+        <button (click)="toggleRemoveButtons()">Remove From Favorite</button>
+        <button (click)="toggleSlide()">All Coins</button>
+    </div>
+</div>
